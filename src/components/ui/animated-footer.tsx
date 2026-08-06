@@ -70,17 +70,33 @@ export const AnimatedFooter = ({
                 </div>
               )}
 
-              {navLinks.length > 0 && (
-                <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-muted-foreground max-w-full px-4">
-                  {navLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      className="hover:text-foreground duration-300 hover:font-semibold"
-                      href={link.href}
-                    >
-                      {link.label}
-                    </a>
-                  ))}
+             {navLinks.map((link, index) => {
+
+  const interno = link.href.startsWith("/");
+
+  return interno ? (
+
+    <Link
+      key={index}
+      to={link.href}
+      className="hover:text-foreground duration-300 hover:font-semibold"
+    >
+      {link.label}
+    </Link>
+
+  ) : (
+
+    <a
+      key={index}
+      href={link.href}
+      className="hover:text-foreground duration-300 hover:font-semibold"
+    >
+      {link.label}
+    </a>
+
+  );
+
+})}
                 </div>
               )}
             </div>
