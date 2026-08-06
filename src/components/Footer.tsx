@@ -1,6 +1,7 @@
 import { AnimatedFooter } from "@/components/ui/animated-footer";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 import logoLight from "@/assets/logo-conecta-white.png";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const socialLinks = [
@@ -26,6 +27,9 @@ export const Footer = () => {
     { label: "Contato", href: "#contato" },
     { label: "SMS em Massa", href: "#servicos" },
     { label: "Interconexão", href: "#servicos" },
+    { label: "Quem Somos", href: "/quem-somos" },
+    { label: "Termos de Uso", href: "/termos" },
+    { label: "Política de Privacidade", href: "/privacidade" },
   ];
 
   return (
